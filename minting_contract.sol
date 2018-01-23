@@ -8,7 +8,7 @@ contract Navro {
   //public variables of the token
   string public name;
   string public symbol;
-  uint8 public decimals = 8;
+  uint8 public decimals = 18;
   //18 decimal places is a strongly suggested default, avoid changing it
   uint256 public totalSupply;
 
@@ -21,6 +21,8 @@ contract Navro {
 
   //This notifies clients about amount burnt
   event Burn(address indexed from, uint256 value);
+  
+  
 
   /**
    * Constrctor function
@@ -154,6 +156,8 @@ contract Navro {
             return true;
 
           }
-
+          function getBalance(address _funderAddress) view public returns(uint){
+                return balanceOf[_funderAddress];
+            }
 
 }
